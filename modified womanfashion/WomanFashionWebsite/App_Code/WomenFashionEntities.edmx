@@ -1,0 +1,419 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="WomenFashionModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Admin">
+          <Key>
+            <PropertyRef Name="Admin_Id" />
+          </Key>
+          <Property Name="Admin_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Password" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Brand">
+          <Key>
+            <PropertyRef Name="BrandID" />
+          </Key>
+          <Property Name="BrandID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="BrandName" Type="nvarchar(max)" />
+          <Property Name="Fashion_Type_Id" Type="int" />
+        </EntityType>
+        <EntityType Name="category">
+          <Key>
+            <PropertyRef Name="categoryid" />
+          </Key>
+          <Property Name="categoryid" Type="int" Nullable="false" />
+          <Property Name="categoryname" Type="nvarchar" MaxLength="50" />
+          <Property Name="categoryhtml" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Color">
+          <Key>
+            <PropertyRef Name="ColorID" />
+          </Key>
+          <Property Name="ColorID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ColorName" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Fashion Type">
+          <Key>
+            <PropertyRef Name="Fashion_Type_Id" />
+          </Key>
+          <Property Name="Fashion_Type_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Fashion_Type_Name" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Fashion_Item">
+          <Key>
+            <PropertyRef Name="Fashion_item_Id" />
+          </Key>
+          <Property Name="Fashion_item_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Item_Description" Type="nvarchar" MaxLength="50" />
+          <Property Name="ImageURL" Type="nvarchar(max)" />
+          <Property Name="Fashion_Type_Id" Type="int" />
+          <Property Name="ColorId" Type="int" />
+          <Property Name="BrandID" Type="int" />
+          <Property Name="categoryid" Type="int" />
+          <Property Name="Price" Type="float" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <Association Name="FK_Brand_Fashion Type">
+          <End Role="Fashion Type" Type="Self.Fashion Type" Multiplicity="0..1" />
+          <End Role="Brand" Type="Self.Brand" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Fashion Type">
+              <PropertyRef Name="Fashion_Type_Id" />
+            </Principal>
+            <Dependent Role="Brand">
+              <PropertyRef Name="Fashion_Type_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Fashion_Item_Brand1">
+          <End Role="Brand" Type="Self.Brand" Multiplicity="0..1" />
+          <End Role="Fashion_Item" Type="Self.Fashion_Item" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Brand">
+              <PropertyRef Name="BrandID" />
+            </Principal>
+            <Dependent Role="Fashion_Item">
+              <PropertyRef Name="BrandID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Fashion_Item_category">
+          <End Role="category" Type="Self.category" Multiplicity="0..1" />
+          <End Role="Fashion_Item" Type="Self.Fashion_Item" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="category">
+              <PropertyRef Name="categoryid" />
+            </Principal>
+            <Dependent Role="Fashion_Item">
+              <PropertyRef Name="categoryid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Fashion_Item_Color">
+          <End Role="Color" Type="Self.Color" Multiplicity="0..1" />
+          <End Role="Fashion_Item" Type="Self.Fashion_Item" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Color">
+              <PropertyRef Name="ColorID" />
+            </Principal>
+            <Dependent Role="Fashion_Item">
+              <PropertyRef Name="ColorId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Fashion_Item_Fashion Type">
+          <End Role="Fashion Type" Type="Self.Fashion Type" Multiplicity="0..1" />
+          <End Role="Fashion_Item" Type="Self.Fashion_Item" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Fashion Type">
+              <PropertyRef Name="Fashion_Type_Id" />
+            </Principal>
+            <Dependent Role="Fashion_Item">
+              <PropertyRef Name="Fashion_Type_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="WomenFashionModelStoreContainer">
+          <EntitySet Name="Admin" EntityType="Self.Admin" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Brand" EntityType="Self.Brand" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="category" EntityType="Self.category" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Color" EntityType="Self.Color" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Fashion Type" EntityType="Self.Fashion Type" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Fashion_Item" EntityType="Self.Fashion_Item" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Brand_Fashion Type" Association="Self.FK_Brand_Fashion Type">
+            <End Role="Fashion Type" EntitySet="Fashion Type" />
+            <End Role="Brand" EntitySet="Brand" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Fashion_Item_Brand1" Association="Self.FK_Fashion_Item_Brand1">
+            <End Role="Brand" EntitySet="Brand" />
+            <End Role="Fashion_Item" EntitySet="Fashion_Item" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Fashion_Item_category" Association="Self.FK_Fashion_Item_category">
+            <End Role="category" EntitySet="category" />
+            <End Role="Fashion_Item" EntitySet="Fashion_Item" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Fashion_Item_Color" Association="Self.FK_Fashion_Item_Color">
+            <End Role="Color" EntitySet="Color" />
+            <End Role="Fashion_Item" EntitySet="Fashion_Item" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Fashion_Item_Fashion Type" Association="Self.FK_Fashion_Item_Fashion Type">
+            <End Role="Fashion Type" EntitySet="Fashion Type" />
+            <End Role="Fashion_Item" EntitySet="Fashion_Item" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="WomenFashionModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="WomenFashionEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Admin" EntityType="WomenFashionModel.Admin" />
+          <EntitySet Name="Brand" EntityType="WomenFashionModel.Brand" />
+          <EntitySet Name="category" EntityType="WomenFashionModel.category" />
+          <EntitySet Name="Color" EntityType="WomenFashionModel.Color" />
+          <EntitySet Name="Fashion_Type" EntityType="WomenFashionModel.Fashion_Type" />
+          <EntitySet Name="Fashion_Item" EntityType="WomenFashionModel.Fashion_Item" />
+          <EntitySet Name="sysdiagrams" EntityType="WomenFashionModel.sysdiagrams" />
+          <AssociationSet Name="FK_Brand_Fashion_Type" Association="WomenFashionModel.FK_Brand_Fashion_Type">
+            <End Role="Fashion_Type" EntitySet="Fashion_Type" />
+            <End Role="Brand" EntitySet="Brand" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Fashion_Item_Brand1" Association="WomenFashionModel.FK_Fashion_Item_Brand1">
+            <End Role="Brand" EntitySet="Brand" />
+            <End Role="Fashion_Item" EntitySet="Fashion_Item" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Fashion_Item_category" Association="WomenFashionModel.FK_Fashion_Item_category">
+            <End Role="category" EntitySet="category" />
+            <End Role="Fashion_Item" EntitySet="Fashion_Item" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Fashion_Item_Color" Association="WomenFashionModel.FK_Fashion_Item_Color">
+            <End Role="Color" EntitySet="Color" />
+            <End Role="Fashion_Item" EntitySet="Fashion_Item" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Fashion_Item_Fashion_Type" Association="WomenFashionModel.FK_Fashion_Item_Fashion_Type">
+            <End Role="Fashion_Type" EntitySet="Fashion_Type" />
+            <End Role="Fashion_Item" EntitySet="Fashion_Item" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Admin">
+          <Key>
+            <PropertyRef Name="Admin_Id" />
+          </Key>
+          <Property Name="Admin_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Brand">
+          <Key>
+            <PropertyRef Name="BrandID" />
+          </Key>
+          <Property Name="BrandID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="BrandName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Fashion_Type_Id" Type="Int32" />
+          <NavigationProperty Name="Fashion_Type" Relationship="WomenFashionModel.FK_Brand_Fashion_Type" FromRole="Brand" ToRole="Fashion_Type" />
+          <NavigationProperty Name="Fashion_Item" Relationship="WomenFashionModel.FK_Fashion_Item_Brand1" FromRole="Brand" ToRole="Fashion_Item" />
+        </EntityType>
+        <EntityType Name="category">
+          <Key>
+            <PropertyRef Name="categoryid" />
+          </Key>
+          <Property Name="categoryid" Type="Int32" Nullable="false" />
+          <Property Name="categoryname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="categoryhtml" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Fashion_Item" Relationship="WomenFashionModel.FK_Fashion_Item_category" FromRole="category" ToRole="Fashion_Item" />
+        </EntityType>
+        <EntityType Name="Color">
+          <Key>
+            <PropertyRef Name="ColorID" />
+          </Key>
+          <Property Name="ColorID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ColorName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Fashion_Item" Relationship="WomenFashionModel.FK_Fashion_Item_Color" FromRole="Color" ToRole="Fashion_Item" />
+        </EntityType>
+        <EntityType Name="Fashion_Type">
+          <Key>
+            <PropertyRef Name="Fashion_Type_Id" />
+          </Key>
+          <Property Name="Fashion_Type_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Fashion_Type_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Brand" Relationship="WomenFashionModel.FK_Brand_Fashion_Type" FromRole="Fashion_Type" ToRole="Brand" />
+          <NavigationProperty Name="Fashion_Item" Relationship="WomenFashionModel.FK_Fashion_Item_Fashion_Type" FromRole="Fashion_Type" ToRole="Fashion_Item" />
+        </EntityType>
+        <EntityType Name="Fashion_Item">
+          <Key>
+            <PropertyRef Name="Fashion_item_Id" />
+          </Key>
+          <Property Name="Fashion_item_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Item_Description" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ImageURL" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Fashion_Type_Id" Type="Int32" />
+          <Property Name="ColorId" Type="Int32" />
+          <Property Name="BrandID" Type="Int32" />
+          <Property Name="categoryid" Type="Int32" />
+          <Property Name="Price" Type="Double" />
+          <NavigationProperty Name="Brand" Relationship="WomenFashionModel.FK_Fashion_Item_Brand1" FromRole="Fashion_Item" ToRole="Brand" />
+          <NavigationProperty Name="category" Relationship="WomenFashionModel.FK_Fashion_Item_category" FromRole="Fashion_Item" ToRole="category" />
+          <NavigationProperty Name="Color" Relationship="WomenFashionModel.FK_Fashion_Item_Color" FromRole="Fashion_Item" ToRole="Color" />
+          <NavigationProperty Name="Fashion_Type" Relationship="WomenFashionModel.FK_Fashion_Item_Fashion_Type" FromRole="Fashion_Item" ToRole="Fashion_Type" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <Association Name="FK_Brand_Fashion_Type">
+          <End Type="WomenFashionModel.Fashion_Type" Role="Fashion_Type" Multiplicity="0..1" />
+          <End Type="WomenFashionModel.Brand" Role="Brand" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Fashion_Type">
+              <PropertyRef Name="Fashion_Type_Id" />
+            </Principal>
+            <Dependent Role="Brand">
+              <PropertyRef Name="Fashion_Type_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Fashion_Item_Brand1">
+          <End Type="WomenFashionModel.Brand" Role="Brand" Multiplicity="0..1" />
+          <End Type="WomenFashionModel.Fashion_Item" Role="Fashion_Item" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Brand">
+              <PropertyRef Name="BrandID" />
+            </Principal>
+            <Dependent Role="Fashion_Item">
+              <PropertyRef Name="BrandID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Fashion_Item_category">
+          <End Type="WomenFashionModel.category" Role="category" Multiplicity="0..1" />
+          <End Type="WomenFashionModel.Fashion_Item" Role="Fashion_Item" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="category">
+              <PropertyRef Name="categoryid" />
+            </Principal>
+            <Dependent Role="Fashion_Item">
+              <PropertyRef Name="categoryid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Fashion_Item_Color">
+          <End Type="WomenFashionModel.Color" Role="Color" Multiplicity="0..1" />
+          <End Type="WomenFashionModel.Fashion_Item" Role="Fashion_Item" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Color">
+              <PropertyRef Name="ColorID" />
+            </Principal>
+            <Dependent Role="Fashion_Item">
+              <PropertyRef Name="ColorId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Fashion_Item_Fashion_Type">
+          <End Type="WomenFashionModel.Fashion_Type" Role="Fashion_Type" Multiplicity="0..1" />
+          <End Type="WomenFashionModel.Fashion_Item" Role="Fashion_Item" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Fashion_Type">
+              <PropertyRef Name="Fashion_Type_Id" />
+            </Principal>
+            <Dependent Role="Fashion_Item">
+              <PropertyRef Name="Fashion_Type_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="WomenFashionModelStoreContainer" CdmEntityContainer="WomenFashionEntities">
+          <EntitySetMapping Name="Admin">
+            <EntityTypeMapping TypeName="WomenFashionModel.Admin">
+              <MappingFragment StoreEntitySet="Admin">
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="Admin_Id" ColumnName="Admin_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Brand">
+            <EntityTypeMapping TypeName="WomenFashionModel.Brand">
+              <MappingFragment StoreEntitySet="Brand">
+                <ScalarProperty Name="Fashion_Type_Id" ColumnName="Fashion_Type_Id" />
+                <ScalarProperty Name="BrandName" ColumnName="BrandName" />
+                <ScalarProperty Name="BrandID" ColumnName="BrandID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="category">
+            <EntityTypeMapping TypeName="WomenFashionModel.category">
+              <MappingFragment StoreEntitySet="category">
+                <ScalarProperty Name="categoryhtml" ColumnName="categoryhtml" />
+                <ScalarProperty Name="categoryname" ColumnName="categoryname" />
+                <ScalarProperty Name="categoryid" ColumnName="categoryid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Color">
+            <EntityTypeMapping TypeName="WomenFashionModel.Color">
+              <MappingFragment StoreEntitySet="Color">
+                <ScalarProperty Name="ColorName" ColumnName="ColorName" />
+                <ScalarProperty Name="ColorID" ColumnName="ColorID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Fashion_Type">
+            <EntityTypeMapping TypeName="WomenFashionModel.Fashion_Type">
+              <MappingFragment StoreEntitySet="Fashion Type">
+                <ScalarProperty Name="Fashion_Type_Name" ColumnName="Fashion_Type_Name" />
+                <ScalarProperty Name="Fashion_Type_Id" ColumnName="Fashion_Type_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Fashion_Item">
+            <EntityTypeMapping TypeName="WomenFashionModel.Fashion_Item">
+              <MappingFragment StoreEntitySet="Fashion_Item">
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="categoryid" ColumnName="categoryid" />
+                <ScalarProperty Name="BrandID" ColumnName="BrandID" />
+                <ScalarProperty Name="ColorId" ColumnName="ColorId" />
+                <ScalarProperty Name="Fashion_Type_Id" ColumnName="Fashion_Type_Id" />
+                <ScalarProperty Name="ImageURL" ColumnName="ImageURL" />
+                <ScalarProperty Name="Item_Description" ColumnName="Item_Description" />
+                <ScalarProperty Name="Fashion_item_Id" ColumnName="Fashion_item_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="WomenFashionModel.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="definition" ColumnName="definition" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

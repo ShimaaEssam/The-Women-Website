@@ -1,0 +1,22 @@
+﻿body {
+    background-image:url("../WebImages/12.jpg");
+        color:darkblue;
+        font-weight:bolder;
+        font-size:20px;
+}
+
+
+
+.navbar-inverse .navbar-brand {
+    color:#0c5ceb;
+    font-family:Century;
+    font-size:larger;
+}
+.navbar-inverse .navbar-nav>li>a{
+    color:#56b9c7;
+    text-decoration:underline;
+ margin-right:70px;
+ 
+ margin-left:70px;   
+}
+  

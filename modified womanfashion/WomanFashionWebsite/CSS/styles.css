@@ -1,0 +1,49 @@
+﻿
+
+.validation {
+    color: red;
+    padding: 0px;
+    margin: 0px;
+}
+
+.mod {
+    position: fixed;
+    z-index: 999;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    background-color: Black;
+    filter: alpha(opacity=60);
+    opacity: 0.6;
+    -moz-opacity: 0.8;
+}
+.imgmargin
+{
+margin-left:auto;margin-right:auto;
+Height:500px; Width:500px;
+}
+.cent {
+    z-index: 1000;
+    margin: 300px auto;
+    padding: 10px;
+    width: 140px;
+    background-color: White;
+    border-radius: 10px;
+    filter: alpha(opacity=100);
+    opacity: 1;
+    -moz-opacity: 1;
+}
+
+    .cent img {
+        height: 128px;
+        width: 128px;
+    }
+    .cent label {
+        font-size:20px;
+        text-align:right;
+    }
+
+    .table-bordered > tbody > tr > th {
+    background-color: #337ab7;
+    color: #fff;
+}

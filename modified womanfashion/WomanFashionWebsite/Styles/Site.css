@@ -1,0 +1,1027 @@
+﻿
+/*
+Design by Free CSS Templates
+http://www.freecsstemplates.org
+Released for free under a Creative Commons Attribution 3.0 License
+
+Name       : Lower Priority
+Description: A two-column, fixed-width design with a bright color scheme.
+Version    : 1.0
+Released   : 20120130
+*/
+
+* {
+	padding: 0;
+	margin-left: 0;
+    margin-right: 0px;
+    margin-top: 0;
+}
+
+
+body {
+	background: #E0E0E0;
+	font-size: 12px;
+	color: #808080;
+	line-height: 1.75em;
+	direction:rtl;
+    margin:0px;
+}
+
+body,input {
+	font-family: Tahoma, sans-serif;
+    height: 26px;
+}
+
+br.clearfix {
+	clear: both;
+}
+
+
+
+#content {
+	padding: 0;
+	width: 640px;
+	float: left;
+}
+#wrapper 
+{
+		position: relative;
+	
+	width: 950px;
+	overflow:hidden;
+
+	margin-left:auto;
+	margin-right:auto;
+}
+.AllContent 
+{
+	
+	position: relative;
+	width: 950px;
+	overflow:hidden;
+	
+	margin-left:auto;
+	margin-right:auto;
+}
+#footer {
+	width: 950px;
+	margin: 0 auto;
+	padding: 0;
+	background-image:url(../Images/footer.jpg);
+	height: 50px;
+	text-align:center;
+	color:White;
+	padding-top:12px;
+    margin-top:20px;
+    border-radius:10px 10px;
+    margin-bottom:20px;
+    
+}
+
+#footer p {
+	margin: 0;
+	padding: 20px 0;
+	text-align: center;
+	font-weight:bold ; 
+	line-height: normal;
+	color: #ffffff; /*norhan*/
+}
+#header {
+	width: 950px;
+   	margin: 0 auto;
+      
+	
+
+}
+
+.Header1 {
+	width: 950px;
+   	margin: 0 auto;
+     position:fixed;
+     z-index:100px;
+  
+	
+
+}
+
+#logo {
+	width: 950px;
+	height: 147px;
+	margin: 0 auto;
+	background: #180818;
+	background:url("../images/header.JPG") no-repeat; 
+}
+
+.logo1 {
+	width: 950px;
+	height: 50px;
+	margin: 0 auto;
+	position:relative;
+	background:url("../images/logo.JPG") no-repeat; 
+    background-position:right;
+    z-index:100;
+    background-color:#0d5e0d;
+}
+
+#logo h1, #logo p {
+	margin: 0;
+	padding: 0 0 0 20px;
+	line-height: normal;
+}
+
+#logo h1 { 	
+	padding-top: 20px;
+	margin-left:20px;   
+	font-size:20px;
+	color:#ffffff;
+	text-align:left;
+}
+.logo1 h1 { 	
+	padding-top: 20px;
+	margin-left:20px;   
+	font-size:20px;
+	color:#f2d011;
+	text-align:left;
+}
+
+
+#logo h1 a {
+	text-decoration: none;
+	text-transform: lowercase;
+	color: #FFFFFF;
+}
+
+#logo h1 a:hover { text-decoration: underline; }
+
+#logo h2 {
+	padding: 0;
+	margin: 0;
+}
+
+#logo p {
+	padding: 0px 0 0 20px;
+	font: italic 13px Georgia, "Times New Roman", Times, serif;
+	color: #FFFFFF;
+}
+
+#logo p a {
+	text-decoration: none;
+	color: #FFFFFF;
+}
+
+#logo p a:hover { text-decoration: underline; }
+
+/* Content */
+/* Content */
+#menu {
+	
+	line-height: 55px;
+	width: 950px;
+	background: #DF5206 ;
+	font-family: Oswald, sans-serif;
+
+	
+	border-top: solid 1px #FC403C;
+	border-bottom: solid 1px #B60000;
+	height: 55px;
+	margin: 0 0 0 0;
+	direction:rtl;
+	text-align:right;
+	font-size:16px;
+	position:relative;
+	z-index:200;
+}
+.mainMenu
+{
+	float:right;
+}
+.MenuItem
+{
+	color: #FFFFFF;
+	text-transform: lowercase;
+	font-size: 13px;
+	font-weight:bold;
+	direction:rtl;
+	min-width:30px;
+	margin-right:4px;
+	margin-left:4px;
+	text-align:center;
+	text-shadow: 0px 1px 1px #590200;
+	
+		
+}
+
+.DynamicMenuItem
+{   color: #FFFFFF;
+	text-transform: lowercase;
+	font-size: 13px;
+	font-weight:bold;
+	background-color:#DF5206;
+    min-width:100px;
+    height:50px;
+	padding-left:5px;
+	padding-right:5px;
+	border-left:#000000 solid 1px;
+	text-align:center;
+	text-shadow: 0px 1px 1px #590200;
+
+}
+
+.MenuItemSelected
+{
+	color: #000;
+	text-transform: lowercase;
+	font-size: 13px;
+	font-weight:bold;
+	background-color:#DF5206;
+	min-width:100px;
+	padding-left:5px;
+	padding-right:5px;
+	border:#000 4px solid;
+	text-align:center;
+}
+
+.btnNew
+{
+    display:none;
+
+}
+
+.MenuItemHover
+{
+	color: #000;
+	text-transform: lowercase;
+	font-size: 13px;
+font-weight:bold;
+	background-color:#DF5206;
+	z-index:5;
+	min-width:100px;
+	padding-left:5px;
+	padding-right:5px;
+	border:4px #7F705A solid;
+	text-align:center;
+
+}
+.logout 
+{
+	float:right;
+}
+.logout a {
+	color: #FFFFFF;
+	text-transform: lowercase;
+	font-size: 13px;
+	font-weight:bold;
+	text-decoration: none;
+	text-shadow: 0px 1px 1px #590200;
+	padding-right:5px;
+}
+
+.logout ul {
+	list-style: none;
+}
+
+.logout ul li {
+	padding: 0 1px 0 1px;
+	display: inline;
+	float:right;
+}
+
+.logout ul li.first {
+	padding-left: 0;
+}
+
+#page {
+	width: 950px;
+	overflow:hidden;
+	min-height:550px;
+	color: #5B5B5B;
+	position: relative;
+	border-top: solid 1px #FFFFFF;
+	padding: 15px 35px 15px 35px;
+	background: #FFFFFF url(../images/img03.gif) repeat-x top left;
+	margin: 0 0 0 0;
+	border-bottom: solid 5px #D0D0D0;
+	
+    margin-top:100px;
+}
+
+
+
+
+/*-- my Csss
+============================================== -->*/
+
+
+.PageContent
+{
+	width:940px;
+	overflow:hidden;
+	min-height:400px;
+	padding-bottom:10px;
+	
+}
+.Row
+{
+	width:830px;
+	overflow:hidden;
+	min-height:30px;
+	padding-top:10px;
+	text-align:right;
+
+}
+.PanelRow
+{
+	width:830px;
+	overflow:hidden;
+	min-height:30px;
+	padding-top:10px;
+	text-align:right;
+	padding-right:5px;
+}
+.Panel_Slice
+{
+	width:890px;
+	overflow:hidden;
+	min-height:30px;
+	padding-top:10px;
+	text-align:right;
+	color:#2F2F2F;
+	font-family:Tahoma;
+	font-size:17px;
+	padding-right:5px;
+}
+
+.RowStatus
+{
+	width:830px;
+	overflow:hidden;
+	min-height:10px;
+	padding-top:10px;
+	text-align:right;
+	color:Red;
+	font-size:15px;
+}
+.Row3
+{
+	width:830px;
+	overflow:hidden;
+	min-height:30px;
+	text-align:right ;
+	color:#7b7b7b;
+	font-family:Tahoma;
+	font-size:17px;
+
+}
+.radiobuttonlist
+{
+    color:#000000;
+	font-family:Tahoma;
+	font-size:17px;
+    
+}
+ 
+.radiobuttonlist input
+{
+    width: 15px;
+    height: 15px;
+}
+.radiobuttonlist label
+{
+  
+    padding-left: 6px;
+    padding-right: 6px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+   
+    margin: 0px 0px 0px 0px;
+    white-space: nowrap;
+    clear: left;
+    margin-right: 5px;
+}
+.radiobuttonlist span.selectedradio label
+{
+    
+    font-weight: bold;
+  
+    padding-top:4px;
+ 
+}
+
+.RowGrid
+{
+	width:870px;
+	overflow:hidden;
+	min-height:30px;
+	padding-top:10px;
+	text-align:right;
+}
+.RowBtn
+{
+	width:640px;
+	overflow:hidden;
+	min-height:30px;
+	padding-top:10px;
+	text-align:right;
+	text-align:left;
+	padding-left:160px;
+	font-weight:bold;
+}
+.Row_Label
+{
+	width:200px;
+	overflow:hidden;
+	min-height:25px;
+	float:right;
+	color:#2F2F2F;
+	font-family:Tahoma;
+	font-size:15px;
+	padding-right:10px;
+
+}
+.Row_LabelS
+{
+	width:180px;
+	overflow:hidden;
+	min-height:25px;
+	float:right;
+	color:#2F2F2F;
+	font-family:Tahoma;
+	font-size:14px;
+	padding-right:10px;
+
+}
+.Row_Label1
+{
+	width:350px;
+	overflow:hidden;
+	min-height:25px;
+	float:right;
+	color:#2F2F2F;
+	font-family:Tahoma;
+	font-size:17px;
+    margin-bottom: 0px;
+}
+
+.Row_Label1_S
+{
+	width:250px;
+	overflow:hidden;
+	min-height:25px;
+	float:right;
+	color:#2F2F2F;
+	font-family:Tahoma;
+	font-size:17px;
+
+}
+
+.Row_Valid
+{
+	width:190px;
+	overflow:hidden;
+	min-height:25px;
+	float:right;
+	padding-right:10px;
+	color:red;
+	font-family:Tahoma;
+	font-size:17px;
+
+}
+.Row_btn
+{
+	width:160px;
+	overflow:hidden;
+	min-height:25px;
+	float:left;
+	padding-right:10px;
+	color:red;
+	font-family:Tahoma;
+	font-size:17px;
+
+}
+
+.Row_txt
+{
+	width:310px;
+	overflow:hidden;
+	min-height:25px;
+	float:right;
+	padding-right:10px;
+	color:#2F2F2F;
+	font-family:Tahoma;
+	font-size:15px;
+
+}
+.Row_txt_S
+{
+	width:180px;
+	overflow:hidden;
+	min-height:25px;
+	float:right;
+	padding-right:10px;
+	color:#2F2F2F;
+	font-family:Tahoma;
+	font-size:15px;
+
+}
+
+.Row_txt_SS
+{
+	width:100px;
+	overflow:hidden;
+	min-height:25px;
+	float:right;
+	padding-right:10px;
+	color:#2F2F2F;
+	font-family:Tahoma;
+	font-size:15px;
+
+}
+
+.txtbox
+{
+	width:300px;
+	height:22px;
+}
+
+.txtboxAnswer
+{
+	width:300px;
+	overflow:hidden;
+	min-height:50px;
+}
+
+.txtboxAnswer_S
+{
+	width:250px;
+	overflow:hidden;
+	min-height:50px;
+}
+
+.txtbox_S
+{
+	width:160px;
+	}
+.txtbox_Note
+{
+	width:160px;
+	overflow:hidden;
+	min-height:50px;
+}
+.ddl
+{
+    width:305px;
+    height: 20px;
+}
+.ddl_s
+{
+	width:165px;
+	height:22px;
+}
+.RowTitle
+{
+	width:900px;
+	overflow:hidden;
+	height:35px;
+	text-align:center;
+	color:#2F2F2F;
+	font-family:Tahoma;
+	font-size:28px;
+}
+
+.RowQues
+{
+	width:830px;
+	overflow:hidden;
+	min-height:30px;
+	padding-top:10px;
+	color:#2F2F2F;
+	font-family:Tahoma;
+	font-size:20px;
+	text-align:right;
+	padding-right:10px;
+	direction:rtl;
+	
+}
+.RowAnswer
+{
+	width:830px;
+	overflow:hidden;
+	min-height:30px;
+	padding-top:10px;
+	color:#2F2F2F;
+	font-family:Tahoma;
+	font-size:16px;
+	text-align:right;
+	padding-right:10px;	
+	direction:rtl;
+}
+.Datalist
+{
+	width:820px;
+	margin-bottom:10px;
+	margin-top:5px;
+
+}
+.Datalist table {
+	border-collapse: collapse;
+	margin: 5px 5px;	
+
+}
+.Datalist th {
+	height: 32px;
+	padding-left: 2px;
+	padding-right:2px;
+	color: white;
+	text-align: right ;
+	background: #696969;	
+	border-width: 1px;
+  	border-style: solid;
+  	border-color: gray ;	
+
+}
+.Datalist tr {
+	min-height:40px;
+	overflow:hidden;
+	background: #fff;
+
+
+}
+.Datalist td {
+	padding-left: 2px;
+	padding-right: 2px;
+	border: 1px solid gray;	
+	min-width:30px;
+	height:40px;
+	overflow:hidden;
+	font-size:11px;
+}
+
+.Datalist td  a{
+	color:#8B7238;	
+}
+
+.Datalist td  a:hover{
+	color:#C2BDA1;	
+}
+
+.Datalist .DatalistSelected
+{
+	background:#E9E9E9;
+	height:34px;
+}
+.Acc_Datalist
+{
+	width:740px;
+	margin-bottom:10px;
+
+}
+.Acc_Datalist table {
+	border-collapse: collapse;
+	margin: 15px 10px;	
+
+}
+.Acc_Datalist th {
+	height: 38px;
+	padding-left: 6px;
+	padding-right: 6px;
+	color: white;
+	text-align: right ;
+	background: #696969;	
+	border-width: 1px;
+  	border-style: solid;
+  	border-color: gray ;	
+
+}
+.Acc_Datalist tr {
+	height: 34px;
+	background: #fff;
+
+
+}
+.Acc_Datalist td {
+	padding-left: 6px;
+	padding-right: 6px;
+	border: 1px solid gray;	
+}
+
+.Acc_Datalist td  a{
+	color:#8B7238;	
+}
+
+.Acc_Datalist td  a:hover{
+	color:#C2BDA1;	
+}
+
+.Acc_Datalist .DatalistSelected
+{
+	background:#E9E9E9;
+	height:34px;
+}
+
+.Row  a{
+	color:#2F2F2F;	
+}
+
+.Row  a:hover{
+	color:#C2BDA1;	
+}
+
+/* Accordion */
+.accordionHeader
+{
+    border: 1px solid #2F4F4F;
+    color: white;
+    background-color: #E0E0E0;
+	font-weight: bold;
+    padding: 5px;
+    margin-top: 5px;
+    cursor: pointer;
+    min-height:30px;
+    width:830px;
+}
+
+.accordionHeader a
+{
+	color: #CF1309;
+	background: none;
+	text-decoration: none;
+}
+
+.accordionHeader a:hover
+{
+	background: none;
+	text-decoration: underline;
+	color:black;
+}
+
+.accordionHeaderSelected
+{
+    border: 1px solid #2F4F4F;
+    color: white;
+    background-color: #7F705A;
+	font-weight: bold;
+    padding: 5px;
+    margin-top: 5px;
+    width:800px;
+    cursor: pointer;
+}
+
+.accordionHeaderSelected a
+{
+	color: #FFFFFF;
+	background: none;
+	text-decoration: none;
+}
+.accordionHeaderSelected a:hover
+{
+	background: none; 
+	text-decoration: underline;
+	color:black;
+}
+
+.accordionContent
+{
+    background-color: #fff;
+    border: 1px dashed #2F4F4F;
+    border-top: none;
+    padding: 5px;
+    padding-top: 10px;
+    width:800px;
+    min-height:50px;
+}
+.RowAccordion
+{
+	width:800px;
+	overflow:hidden;
+	min-height:30px;
+	padding-top:10px;
+	direction:rtl;
+}
+
+/*====================================================*/
+.Row_Label2
+{
+     width:75px;
+     overflow:hidden;
+     min-height:25px;
+     float:right;
+     color:#2F2F2F;
+     font-family:Tahoma;
+     font-size:17px;
+
+}
+.Row_btn_go
+{
+     width:27px;
+     overflow:hidden;
+     min-height:25px;
+     float:right;
+     color:#2F2F2F;
+     font-family:Tahoma;
+     font-size:17px;
+
+}
+.Row_txt2
+{
+     width:90px;
+     overflow:hidden;
+     min-height:25px;
+     float:right;
+     padding-right:10px;
+     color:#2F2F2F;
+     font-family:Tahoma;
+     font-size:15px;
+
+}
+.Row_txt3
+{
+     width:450px;
+     overflow:hidden;
+     min-height:25px;
+     float:right;
+     padding-right:10px;
+     color:#2F2F2F;
+     font-family:Tahoma;
+     font-size:11px;
+
+}
+.Row_txt4
+{
+     width:100px;
+     overflow:hidden;
+     min-height:25px;
+     float:right;
+     padding-right:10px;
+     color:#2F2F2F;
+     font-family:Tahoma;
+     font-size:15px;
+
+}
+
+.Row_ddl
+{
+     font-family:Tahoma;
+     font-size:11px;
+
+}
+.Row_LabelRadio
+{
+	width:300px;
+	overflow:hidden;
+	min-height:25px;
+	float:right;
+	color:#2F2F2F;
+	font-family:Tahoma;
+	font-size:17px;
+
+}
+.Row_btn2
+{
+     width:360px;
+     overflow:hidden;
+     min-height:25px;
+     float:right;
+     padding-right:10px;
+     color:red;
+     font-family:Tahoma;
+     font-size:17px;
+
+}
+
+.ajax__myTab .ajax__tab_header {
+        font-family: verdana,tahoma,helvetica;
+        font-size: 13px;
+        font-weight: bold;
+        color:Black;
+        border-bottom: solid 2px #999999
+     }
+   
+.ajax__myTab .ajax__tab_outer {
+        padding-right: 4px;
+        height: 30px;
+        background-color: #C0C0C0;
+        margin-right: 2px;
+        border-right: solid 1px #666666;
+        border-top: solid 1px #aaaaaa
+     }
+   
+.ajax__myTab .ajax__tab_inner {
+        padding-left: 3px;
+        background-color: #C0C0C0;
+     }
+   
+.ajax__myTab .ajax__tab_tab {
+        height: 15px;
+        padding: 4px;
+        margin: 0;
+     }
+   
+.ajax__myTab .ajax__tab_hover .ajax__tab_outer {
+        background-color: #cccccc
+     }
+   
+.ajax__myTab .ajax__tab_hover .ajax__tab_inner {
+        background-color: #cccccc
+     }
+   
+.ajax__myTab .ajax__tab_hover .ajax__tab_tab {}
+  
+.ajax__myTab .ajax__tab_active .ajax__tab_outer {
+        background-color: #fff;
+        border-left: solid 1px #999999;
+     }
+   
+.ajax__myTab .ajax__tab_active .ajax__tab_inner {
+        background-color:#fff;
+     }
+   
+.ajax__myTab .ajax__tab_active .ajax__tab_tab {}
+  
+.ajax__myTab .ajax__tab_body {
+        font-family: verdana,tahoma,helvetica;
+        font-size: 10pt;
+        border: 1px solid #999999;
+        border-top: 0;
+        padding: 8px;
+        background-color: #ffffff;
+}
+.ddl_big
+{
+	width:420px;
+	height:22px;
+}
+
+/*====================================================*/
+/*=============  PopUp Window Style   ================*/
+/*====================================================*/
+.modalBackground
+    {
+        background-color: Black;
+        filter: alpha(opacity=40);
+        width: -1px;
+        opacity: 0.4;
+    }
+    .modalPopup
+    {
+        background-color: #FFFFFF;
+        width: 900px;
+        border: 3px solid #006600;
+        padding: 3px;
+    }
+    .modalPopup .header
+    {
+        background-color: #FF8000;
+        height: 30px;
+        color: White;
+        line-height: 30px;
+        text-align: center;
+        font-weight: bold;
+        width: 850px;
+}
+   
+      .modalPopup .button
+    {
+        height: 23px;
+        width: 150px;
+        color: White;
+        line-height: 23px;
+        text-align: center;
+        font-weight: bold;
+        cursor: pointer;
+        background-color: #FF8000;
+        border: 1px solid #5C5C5C;
+    }
+    .modalPopup RowGridPopUp
+    {
+    width:850px;
+	overflow:hidden;
+	min-height:30px;
+	padding-top:10px;
+	text-align:justify;
+    }
+   
+    /*====================================================*/
+
+ .Grouping_Panel
+{
+       width:880px;
+       overflow:hidden;
+       min-height:30px;
+
+    position:relative;
+}
+
+
+ .Row_txt_big
+{
+	width:710px;
+	overflow:hidden;
+	min-height:100px;
+	float:right;
+	padding-right:10px;
+	color:#2F2F2F;
+	font-family:Tahoma;
+	font-size:15px;
+
+}
+

@@ -1,0 +1,109 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Home.master.cs" Inherits="MasterPages_Home" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title> Woman </title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="../JS/collapse.js"></script>
+    <link href="../CSS/bootstrap.css" rel="stylesheet" />
+     <link href="../CSS/custom.css" rel="stylesheet" type="text/css" />
+    <link href="../CSS/masterHome.css" rel="stylesheet" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+   
+</head>
+<body>
+    <form id="form1" runat="server">
+
+        <nav class="navbar navbar-inverse">
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#">T h e W o m a n </a>
+                </div>
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="../UserPages/Home.aspx">Home</a></li>
+                  <%--  <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Clothes<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="../UserPages/Formal.aspx">Formal</a></li>
+                            <li><a href="../UserPages/Casual.aspx">Casual</a></li>
+                            <li><a href="../UserPages/Dresses.aspx">Dress</a></li>
+                        </ul>
+                    </li>--%>
+                      <li><a href="../UserPages/Clothes.aspx">Clothes</a></li>
+                    <li><a href="../UserPages/MakeUp.aspx">MakeUp</a></li>
+                    <li><a href="../UserPages/Accessories.aspx">Accessories</a></li>
+
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="../UserPages/ShoppingCart.aspx"><span class="glyphicon glyphicon-shopping-cart"></span>
+                        <asp:Label runat="server" ID="lbl_cart" Text="Cart" /></a></li>
+                   
+                    <li><a href="../AdminPages/Login.aspx"><span class="glyphicon glyphicon-log-in"></span> Login </a></li>
+                </ul>
+                <div class="navbar-form navbar-left dirLTR">
+                    <div class="form-group">
+                        <input type="text" runat="server" id="txt_Search" class="form-control" placeholder="Search with Colors" name="search" />
+                    </div>
+                    <asp:Button CssClass="btn btn-default" ID="btn_search" runat="server" Text="Submit" OnClick="btn_search_Click"></asp:Button>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container-fluid">
+
+            <div>
+
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+
+            </div>
+        </div>
+
+
+
+
+<div class="footer-bottom">
+
+	<div class="container">
+
+		<div class="row">
+
+			<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+
+				<div class="copyright">
+
+					© 2017 , FCIS , All Rights Reserved
+
+				</div>
+
+			</div>
+
+			<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+
+				<div class="design">
+
+					 <a href="#">The Woman </a> |  <a target="_blank" href="#">Web Design & Development by FCIS </a>
+
+				</div>
+
+			</div>
+
+		</div>
+
+	</div>
+
+</div>
+
+
+
+    </form>
+</body>
+</html>

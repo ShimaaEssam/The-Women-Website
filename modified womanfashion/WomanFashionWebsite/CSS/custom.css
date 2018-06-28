@@ -1,0 +1,174 @@
+﻿@import url(http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css);
+.col-item
+{
+    border: 1px solid #E1E1E1;
+    border-radius: 5px;
+    background: #FFF;
+    margin-top:15px;
+margin-bottom:15px;
+
+}
+.col-item .photo img
+{
+    margin: 0 auto;
+    width: 100%;
+}
+
+.col-item .info
+{
+    padding: 10px;
+    border-radius: 0 0 5px 5px;
+    margin-top: 1px;
+}
+
+.col-item:hover .info {
+    background-color: #F5F5DC;
+}
+.col-item .price
+{
+    /*width: 50%;*/
+    float: left;
+    margin-top: 5px;
+}
+
+.col-item .price h5
+{
+    line-height: 20px;
+    margin: 0;
+}
+
+.price-text-color
+{
+    color: #219FD1;
+}
+
+.col-item .info .rating
+{
+    color: #777;
+}
+
+.col-item .rating
+{
+    /*width: 50%;*/
+    float: left;
+    font-size: 17px;
+    text-align: right;
+    line-height: 52px;
+    margin-bottom: 10px;
+    height: 52px;
+}
+
+.col-item .separator
+{
+    border-top: 1px solid #E1E1E1;
+}
+
+.clear-left
+{
+    clear: left;
+}
+.dirLTR
+{
+    direction:ltr;
+}
+
+.col-item .separator p
+{
+    line-height: 20px;
+    margin-bottom: 0;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.col-item .separator p i
+{
+    margin-right: 5px;
+}
+.col-item .btn-add
+{
+    width: 50%;
+    float: left;
+}
+
+.col-item .btn-add
+{
+    border-right: 1px solid #E1E1E1;
+}
+
+.col-item .btn-details
+{
+    width: 50%;
+    float: left;
+    padding-left: 10px;
+}
+.controls
+{
+    margin-top: 20px;
+}
+[data-slide="prev"]
+{
+    margin-right: 10px;
+}
+.container-fluid {
+   
+    padding-left: 0px;
+    padding-right:0px;
+    padding-top: 0px;
+    padding-left: 0px;
+}
+.navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:hover, .navbar-inverse .navbar-nav > .active{
+    color:#fffefe;
+    font-family:Constantia;
+    font-size:16px;
+    font-weight:bold;
+ background-color:darkred;
+  margin-right:5px;
+
+}
+
+
+.navbar-inverse .navbar-nav > li > a {
+    color: white;
+    background-color:darkred;
+    margin-right:5px;
+     font-weight:bold;
+     font-family:Constantia;
+        font-size:16px;
+}
+.btn-default {
+    color: #333;
+    background-color: #f3cccc;
+    border-color: #ccc;
+    width:80px;
+    height:40px;
+    padding-bottom:0px;
+    padding-top:0px;
+    
+}
+.form-control{
+    height:40px;
+
+}
+.footer-bottom {
+    background-color:#700808;
+    min-height: 30px;
+    width: 100%;
+    
+}
+.copyright {
+    color:black;
+     font-size:large;
+    line-height: 30px;
+    min-height: 30px;
+    padding: 7px 0;
+}
+.design {
+    color: black;
+    line-height: 30px;
+    min-height: 30px;
+    padding: 7px 0;
+    text-align: right;
+}
+.design a {
+    color:black;
+}
